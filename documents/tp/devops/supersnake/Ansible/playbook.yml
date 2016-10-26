@@ -1,0 +1,9 @@
+---
+- hosts: all
+  sudo: yes
+  name: install nginx
+  roles:
+     - role: nginx
+     - { role: sqlite, sqlite_dir: /opt/sqlite }
+     - { role: supervisor }
+     - role: unicorn
